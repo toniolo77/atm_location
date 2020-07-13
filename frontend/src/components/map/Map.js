@@ -1,7 +1,6 @@
 import React from 'react';
 import { Map, GoogleApiWrapper, Marker, InfoWindow } from 'google-maps-react';
-import credentials from '../credentials';
-import GreenIcon from '../assets/images/green_icon.png';
+import GreenIcon from '../../assets/images/green_icon.png';
 
 const mapStyles = {
     width: '100%',
@@ -77,5 +76,5 @@ const MapContainer = (props) => {
 };
 
 export default GoogleApiWrapper({
-    apiKey: credentials.mapsKey
+    apiKey: process.env.REACT_APP_MAP_KEY
   })(MapContainer);

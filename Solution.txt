@@ -1,0 +1,14 @@
+Decisiones de diseño:
+
+Para el desarrollo de la solución se utilizo Node, React y MongoDB.
+Para llevar a cabo las consultas de busqueda de cajeros automáticos más cercanos  en el backend se decidió insertar la información sobre los mismos en una base de datos no relacional como MongoDB, la cual, facilita y optimiza los tiempos de busqueda dado que posee métodos nativos como por ejemplo $near.
+A su vez para el desarrollo de la API se utilizo, ademas de Node, el framework Express.
+Y para el desarrollo de la interfaz gráfica se utilizo React.
+
+
+Futuras mejoras  por falta de tiempo:
+- Uso de reCAPTCHA
+- Mejorar validaciones tanto en frontend como backend
+- Uso de Hooks en React
+- Crear componentes reutilizables para el formulario como inputs, select, etc.
+

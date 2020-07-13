@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './AtmForm.module.scss';
 
 
 const AtmForm = (props) => {
@@ -20,8 +21,8 @@ const AtmForm = (props) => {
                 <label htmlFor="longitude">Longitud</label>
                 <input name="longitude" type="number" value={props.data.longitude} onChange={props.changeForm} className="form-control" id="longitude" placeholder="Longitud" required/>
             </div>
-            <div style={{'textAlign':'center'}}>
-                <button type="submit" className="btn btn-primary" style={{'marginRight':'20px'}}>Consultar</button>
+            <div className={styles.textCenter}>
+                <button type="submit" className="btn btn-primary" >Consultar</button>
                 <button onClick={props.getCoord} className="btn btn-primary">Obtener posicion</button>
             </div>
         </form>

@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import MapContainer from '../components/Map';
-import AtmForm from './AtmForm';
-import CustomModal from '../components/CustomModal';
+import MapContainer from '../../components/map/Map';
+import AtmForm from '../atm-form/AtmForm';
+import CustomModal from '../../components/custom-modal/CustomModal';
+import { Row, Col } from 'react-bootstrap';
+import styles from './HomeContainer.module.scss';
 
 class HomeContainer extends Component {
 
@@ -148,15 +150,15 @@ class HomeContainer extends Component {
 
     render() {
         return (
-            <div className="row">
-                <div className='col-sm-6'>
+            <Row className={styles.contentAtm}>
+                <Col sn={12} md={6} className={styles.element}>
                     <AtmForm data={this.state.data} changeForm={this.handleChangeInputs} sendForm={this.handleSubmit} getCoord={this.getCoord} />
-                </div>
-                <div className='col-sm-6'>
+                </Col>
+                <Col sn={12} md={6} className={styles.element}>
                     <MapContainer markerClicked={this.handleClickMarker} mapClicked={this.handleClickMap} map_data={this.state.map}/>
-                </div>
+                </Col>
                 <CustomModal handleClose={this.handleCloseModal} data={this.state.modal}></CustomModal>
-            </div>
+            </Row>
         )
     }
 }
