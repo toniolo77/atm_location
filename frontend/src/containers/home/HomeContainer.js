@@ -6,18 +6,22 @@ import CustomModal from '../../components/custom-modal/CustomModal';
 import { Row, Col } from 'react-bootstrap';
 import styles from './HomeContainer.module.scss';
 
+const LAT_DEFAULT= -34.5814551;
+const LNG_DEFAULT= -58.4211107;
+const BASE_URL_API= 'http://localhost:3000';
+
 class HomeContainer extends Component {
 
     state = {
         data: {
             atm: 'BANELCO',
-            latitude: undefined,
-            longitude: undefined
+            latitude:"",
+            longitude: ""
         },
         map: {
             center: {
-                lat: -34.5814551,
-                lng: -58.4211107
+                lat: LAT_DEFAULT,
+                lng: LNG_DEFAULT
             },
             markers: [],
             info_window: {
@@ -48,7 +52,7 @@ class HomeContainer extends Component {
     
     handleSubmit = (event) => {
         event.preventDefault();
-        axios.get('http://localhost:3000/cajeros?red='+ this.state.data.atm + '&longitude='+ this.state.data.longitude + '&latitude=' + this.state.data.latitude).then( result =>  {
+        axios.get(BASE_URL_API + '/cajeros?red='+ this.state.data.atm + '&longitude='+ this.state.data.longitude + '&latitude=' + this.state.data.latitude).then( result =>  {
             if (result.data.res.length > 0){
                 let new_map= {...this.state.map};
                 new_map.markers= [...result.data.res];

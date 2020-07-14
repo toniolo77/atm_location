@@ -8,10 +8,14 @@ En el directorio raiz se encuentran dos carpetas el backend(API) y el frontend. 
 Pasos a seguir:
 
 - Inicializacion API
-    - Ir a la carpeta backend y ejecutar "npm start", el cual levanta la aplicación en el modo desarrollador en el puerto 3000
+    - Ir a la carpeta backend
+    - Instalar dependencias con "npm install"
+    - Iniciar servidor ejecutando "npm start", el cual levanta la aplicación en el modo desarrollador en el puerto 3000
 
 - Inicializacion frontend
-    - Ir a la carpeta frontend y ejecutar "npm start .env", el cual levanta la aplicación en el modo desarrollador en el puerto 3001
+    - Ir a la carpeta backend
+    - Instalar dependencias con "npm install"
+    - Iniciar servidor ejecutando "npm start", el cual levanta la aplicación en el modo desarrollador en el puerto 3001
     - En el browser ingresar la url localhost:3001 para acceder a la gui
  
 
